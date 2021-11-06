@@ -10,6 +10,7 @@
 (require 'init-autocomplete)
 (require 'init-kbd)
 (require 'init-org)
+(require 'init-git)
 (use-package restart-emacs)
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
