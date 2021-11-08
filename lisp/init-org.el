@@ -42,6 +42,7 @@
 	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "意向人员") "* 待沟通 %^{heading}%^{COMPANY}p%^{TEAM}p\n%?")
 	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %?\n Create at %U\n %a")))
   :bind ("C-c c" . org-capture)
+  :bind ("C-c a" . org-agenda)
   )
 
 (require 'cal-china)
