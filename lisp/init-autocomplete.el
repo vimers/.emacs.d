@@ -26,6 +26,24 @@
   (push '(company-semantic :with company-yasnippet) company-backends)
   :hook ((after-init . global-company-mode)))
 
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+(use-package projectile)
+(use-package flycheck)
+(use-package yasnippet :config (yas-global-mode))
+(use-package lsp-mode :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :config (setq lsp-completion-enable-additional-text-edit nil))
+(use-package hydra)
+(use-package lsp-ui)
+(use-package which-key :config (which-key-mode))
+(use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
+(use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
+(use-package dap-java :ensure nil)
+(use-package helm-lsp)
+(use-package helm
+  :config (helm-mode))
+(use-package lsp-treemacs)
+
 ;; semantic check
 (use-package flycheck
   :hook (prog-mode . flycheck-mode))
@@ -34,6 +52,7 @@
   :ensure t
   :diminish ivy-mode
   :hook (after-init . ivy-mode))
+
 
 (provide 'init-autocomplete)
 ;;; init-autocomplete.el ends here
