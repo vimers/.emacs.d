@@ -53,6 +53,12 @@
   :diminish ivy-mode
   :hook (after-init . ivy-mode))
 
+;; set python auto complete
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+			 (require 'lsp-pyright)
+			 (lsp))))
 
 (provide 'init-autocomplete)
 ;;; init-autocomplete.el ends here

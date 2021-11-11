@@ -5,3 +5,6 @@ custom.el
 /transient/
 /network-security.data
 /projectile-bookmarks.eld
+/.cache/
+/.dap-breakpoints
+/.lsp-session-v1
