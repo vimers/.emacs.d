@@ -40,6 +40,15 @@
       `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/work/work-2021.org")) "* TODO %^{任务标题}\n Create at %U\n %?")
 	("j" "Journal" entry (file+datetree ,(concat (file-name-as-directory org-home-dir) "journal/journal-2021.org")) "* %U - %^{标题}\n %?")
 	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "意向人员") "* 待沟通 %^{姓名}%^{COMPANY}p%^{TEAM}p\n%?")
+	("b" "Billing")
+	("bg" "Game" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Game | %^{Description} | %^{Amount} |")
+	("be" "Education" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Education | %^{Description} | %^{Amount} |")
+	("bf" "Food" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Food | %^{Description} | %^{Amount} |")
+	("bt" "Travel" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Travel | %^{Description} | %^{Amount} |")
+	("bs" "Salary" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Salary | %^{Description} | %^{Amount} |")
+	("bh" "House(Rent/Mortgage)" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | House | %^{Description} | %^{Amount} |")
+	("bb" "Body Health" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Health | %^{Description} | %^{Amount} |")
+	("bo" "Others" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Others | %^{Description} | %^{Amount} |")
 	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %?\n Create at %U\n %a")))
   :bind ("C-c c" . org-capture)
   :bind ("C-c a" . org-agenda)
@@ -63,5 +72,9 @@ MARK is reserve parameter."
 			   (y (+ (* 100 cycle) yy)))
 		  (diary-chinese-anniversary lunar-month lunar-day y mark))
 	  (diary-chinese-anniversary lunar-month lunar-day year mark)))
+;; export to pdf setting
+(setq org-latex-pdf-process
+      '("xelatex -interaction nonstopmode %f"
+	"xelatex -interaction nonstopmode %f"))
 (provide 'init-org)
 ;;; init-org.el ends here
