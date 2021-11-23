@@ -15,6 +15,7 @@
 (require 'init-org nil 'noerror)
 (require 'init-git nil 'noerror)
 (require 'init-custom-link nil 'noerror)
+(require 'init-blog nil 'noerror)
 (use-package restart-emacs)
 
 
