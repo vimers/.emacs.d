@@ -7,6 +7,7 @@
 ;;; code highlight
 ;;; htmlize install by apt install elpa-htmlize
 (setq org-html-htmlize-output-type 'css)
+(setq org-html-htmlize-font-prefix "org-")
 (setq org-html-head-include-default-style nil)
 (setq org-publish-project-alist
       '(("blog-notes"

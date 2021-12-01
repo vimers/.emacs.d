@@ -24,6 +24,7 @@
 	company-tooltip-offset-display 'scrollbar
 	company-begin-commands '(self-insert-command))
   (push '(company-semantic :with company-yasnippet) company-backends)
+  (push '(company-files) company-backends)
   :hook ((after-init . global-company-mode)))
 
 (use-package company-box

@@ -24,6 +24,8 @@
    '(
 	 (plantuml . t)
 	 (ditaa . t)
+	 (shell . t)
+	 (C . t)
 	 (python . t)))
   ;; automatically show the resulting image
   ; make babel results blocks lowercase
@@ -48,6 +50,7 @@
 	("bs" "Salary" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Salary | %^{Description} | %^{Amount} |")
 	("bh" "House(Rent/Mortgage)" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | House | %^{Description} | %^{Amount} |")
 	("bb" "Body Health" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Health | %^{Description} | %^{Amount} |")
+	("bp" "Pet" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Pet | %^{Description} | %^{Amount} |")
 	("bo" "Others" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Others | %^{Description} | %^{Amount} |")
 	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %?\n Create at %U\n %a")))
   :bind ("C-c c" . org-capture)
