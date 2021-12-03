@@ -8,7 +8,7 @@
   (setq sml/no-confirm-load-theme t
 	sml/theme 'respectful)
   (sml/setup))
-
+(menu-bar-mode -1)
 (use-package rainbow-delimiters
   :init
   (custom-set-faces
