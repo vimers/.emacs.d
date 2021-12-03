@@ -13,10 +13,13 @@
 (require 'init-autocomplete nil 'noerror)
 (require 'init-kbd nil 'noerror)
 (require 'init-org nil 'noerror)
+(require 'init-evil nil 'noerror)
+(require 'init-helm nil 'noerror)
 (require 'init-git nil 'noerror)
 (require 'init-custom-link nil 'noerror)
 (require 'init-blog nil 'noerror)
 (require 'init-abbrev nil 'noerror)
+(require 'init-gdb nil 'noerror)
 (use-package restart-emacs)
 
 

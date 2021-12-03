@@ -1,3 +1,6 @@
+;;; package -- Summary
+;;; Commentary:
+;;; Code:
 (require 'package)
 
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
