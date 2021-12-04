@@ -29,7 +29,12 @@
 
 (use-package company-box
   :hook (company-mode . company-box-mode))
-(use-package projectile)
+(use-package projectile
+  :ensure t
+  :after helm
+  :bind-keymap (
+                ("C-c p" . projectile-command-map)
+                ))
 (use-package flycheck)
 (use-package yasnippet :config (yas-global-mode))
 (use-package lsp-mode :hook ((lsp-mode . lsp-enable-which-key-integration))
@@ -46,11 +51,6 @@
 (use-package flycheck
   :hook (prog-mode . flycheck-mode))
 
-(use-package ivy
-  :ensure t
-  :diminish ivy-mode
-  :hook (after-init . ivy-mode))
-
 ;; set python auto complete
 (use-package lsp-pyright
   :ensure t
@@ -58,5 +58,5 @@
 			 (require 'lsp-pyright)
 			 (lsp))))
 
-(provide 'init-autocomplete)
-;;; init-autocomplete.el ends here
+(provide 'init-lsc)
+;;; init-lsc.el ends here
