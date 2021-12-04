@@ -5,30 +5,22 @@
   :ensure t
   :defer 1
   :init
+  (evil-mode t)
   (setq evil-want-integration t)
   (setq evil-search-module 'evil-search)
   (setq evil-ex-complete-emacs-commands nil)
   (setq evil-want-keybinding nil)
   :config
-  (use-package evil-org
-    :ensure t
-    :after org
-    :hook (org-mode . (lambda () evil-org-mode))
-    :config
-    (require 'evil-org-agenda)
-    (evil-org-agenda-set-keys))
   (use-package evil-leader
     :ensure t
     :after evil
     :init
     (global-evil-leader-mode)
-    ; evil-mode should put after global-evil-leader-mode
-    (evil-mode t)
     :config
     (evil-leader/set-leader ",")
     (evil-leader/set-key
-      "e" 'find-file
-      "b" 'switch-to-buffer
+      "e" 'helm-find-files
+      "b" 'helm-buffers-list
       "k" 'kill-buffer
       "g" 'magit)
     )
@@ -50,6 +42,15 @@
     (evil-define-key 'visual global-map "S" 'evil-surround-region)
     (evil-define-key 'visual global-map "gS" 'evil-Surround-region))
   )
+; evil-org not work at termianl emacs
+(use-package evil-org
+  :ensure t
+  :defer 1
+  :after (org evil)
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 ; set jk to espace from insert mode to normal mode in evil
 (use-package key-chord
   :ensure t
