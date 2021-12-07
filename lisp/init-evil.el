@@ -47,7 +47,7 @@
   :ensure t
   :defer 1
   :after (org evil)
-  :hook (org-mode . (lambda () evil-org-mode))
+  :hook (org-mode . evil-org-mode)
   :config
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))

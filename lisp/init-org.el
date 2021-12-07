@@ -39,7 +39,7 @@
   (setq org-home-dir (or (getenv "ORG_HOME") "~/.org"))
   (setq org-default-notes-file (concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org"))
   (setq org-capture-templates
-      `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/work/work-2021.org")) "* TODO %^{任务标题}\n Create at %U\n %?")
+      `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/work/work-2021.org")) "* TODO %^{任务标题}\nCreate at %U\n %?")
 	("j" "Journal" entry (file+datetree ,(concat (file-name-as-directory org-home-dir) "journal/journal-2021.org")) "* %U - %^{标题}\n %?")
 	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "意向人员") "* 待沟通 %^{姓名}%^{COMPANY}p%^{TEAM}p\n%?")
 	("b" "Billing")
@@ -79,5 +79,13 @@ MARK is reserve parameter."
 (setq org-latex-pdf-process
       '("xelatex -interaction nonstopmode %f"
 	"xelatex -interaction nonstopmode %f"))
+;; hide the emphasis markup
+(setq org-hide-emphasis-markers t)
+;; use centered-dot character as list marker
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
 (provide 'init-org)
 ;;; init-org.el ends here

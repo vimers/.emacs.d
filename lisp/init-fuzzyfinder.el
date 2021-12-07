@@ -1,10 +1,6 @@
 ;;; package -- Summary
 ;;; Commentary:
 ;;; code:
-(require 'helm-config)
-(require 'helm-misc)
-(require 'helm-projectile)
-(require 'helm-locate)
 (setq helm-quick-update t)
 (setq helm-bookmark-show-location t)
 (setq helm-buffers-fuzzy-matching t)
@@ -20,6 +16,10 @@
          ("C-x r b" . helm-filtered-bookmarks))
   :preface (require 'helm-config)
   :config (helm-mode 1))
+(require 'helm-config)
+(require 'helm-misc)
+(require 'helm-locate)
+(use-package helm-projectile)
 (use-package helm-lsp)
 (provide 'init-fuzzyfinder)
 ;;; init-fuzzyfinder.el ends here
