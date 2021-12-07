@@ -58,5 +58,8 @@
 			 (require 'lsp-pyright)
 			 (lsp))))
 
+(use-package helm-xref)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
 (provide 'init-lsc)
 ;;; init-lsc.el ends here
