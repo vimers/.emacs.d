@@ -37,10 +37,15 @@
                 ))
 (use-package flycheck)
 (use-package yasnippet :config (yas-global-mode))
-(use-package lsp-mode :hook ((lsp-mode . lsp-enable-which-key-integration))
-  :config (setq lsp-completion-enable-additional-text-edit nil))
+(use-package lsp-mode
+  :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :config
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
+  (setq lsp-completion-enable-additional-text-edit nil))
 (use-package hydra)
-(use-package lsp-ui)
+(use-package lsp-ui
+  :config
+  (key-chord-define evil-normal-state-map "gr" 'lsp-ui-peek-find-references))
 (use-package which-key :config (which-key-mode))
 (use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
 (use-package dap-mode :after lsp-mode :config (dap-auto-configure-mode))
