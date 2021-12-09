@@ -15,6 +15,8 @@
   (setq org-enforce-todo-dependencies t)
   ;; trust all code as being safe
   (setq org-confirm-babel-evaluate nil)
+  ;; enable <? to expand org tempates
+  (require 'org-tempo)
   ;; support uml drawing
   (setq org-plantuml-jar-path
       (expand-file-name "scripts/plantuml.jar" user-emacs-directory))
