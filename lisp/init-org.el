@@ -54,7 +54,7 @@
 	("bb" "Body Health" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Health | %^{Description} | %^{Amount} |")
 	("bp" "Pet" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Pet | %^{Description} | %^{Amount} |")
 	("bo" "Others" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Others | %^{Description} | %^{Amount} |")
-	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %^{任务标题}\n Create at %U\n %?")))
+	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %^{任务标题}\nCreate at %U\n %?")))
   :bind ("C-c c" . org-capture)
   :bind ("C-c a" . org-agenda)
   )
