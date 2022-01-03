@@ -39,10 +39,10 @@
   (add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
   ;; org-capture setting
   (setq org-home-dir (or (getenv "ORG_HOME") "~/.org"))
-  (setq org-default-notes-file (concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org"))
+  (setq org-default-notes-file (concat (file-name-as-directory org-home-dir) (format-time-string "plan/after-hours/after-hours-%Y.org")))
   (setq org-capture-templates
-      `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/work/work-2021.org")) "* TODO %^{任务标题}\nCreate at %U\n %?")
-	("j" "Journal" entry (file+datetree ,(concat (file-name-as-directory org-home-dir) "journal/journal-2021.org")) "* %U - %^{标题}\n %?")
+      `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) (format-time-string "plan/work/work-%Y.org"))) "* TODO %^{任务标题}\nCreate at %U\n %?")
+	("j" "Journal" entry (file+datetree ,(concat (file-name-as-directory org-home-dir) (format-time-string "journal/journal-%Y.org"))) "* %U - %^{标题}\n %?")
 	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "意向人员") "* 待沟通 %^{姓名}%^{COMPANY}p%^{TEAM}p\n%?")
 	("b" "Billing")
 	("bg" "Game" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Game | %^{Description} | %^{Amount} |")
@@ -54,7 +54,7 @@
 	("bb" "Body Health" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Health | %^{Description} | %^{Amount} |")
 	("bp" "Pet" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Pet | %^{Description} | %^{Amount} |")
 	("bo" "Others" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Others | %^{Description} | %^{Amount} |")
-	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/after-hours-2021.org")) "* TODO %^{任务标题}\nCreate at %U\n %?")))
+	("h" "After hours Todo" entry (file ,(concat (file-name-as-directory org-home-dir) (format-time-string "plan/after-hours/after-hours-%Y.org"))) "* TODO %^{任务标题}\nCreate at %U\n %?")))
   :bind ("C-c c" . org-capture)
   :bind ("C-c a" . org-agenda)
   )
