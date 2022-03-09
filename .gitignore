@@ -10,3 +10,4 @@ custom.el
 /.lsp-session-v1
 /url/
 /recentf
+/tramp

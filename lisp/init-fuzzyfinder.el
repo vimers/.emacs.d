@@ -16,6 +16,7 @@
          ("C-x r b" . helm-filtered-bookmarks))
   :preface (require 'helm-config)
   :config (helm-mode 1))
+(use-package helm-tramp)
 (require 'helm-config)
 (require 'helm-misc)
 (require 'helm-locate)
