@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; code:
 (use-package gruvbox-theme
-     :init (load-theme 'gruvbox-dark-soft t))
+     :init (load-theme 'gruvbox-light-soft t))
 (use-package smart-mode-line
   :init
   (setq sml/no-confirm-load-theme t
