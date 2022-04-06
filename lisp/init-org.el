@@ -37,6 +37,7 @@
 	(org-display-inline-images)
       (error nil)))
   (add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
+  (setq org-log-done 'time)
   ;; org-capture setting
   (setq org-home-dir (or (getenv "ORG_HOME") "~/.org"))
   (setq org-default-notes-file (concat (file-name-as-directory org-home-dir) (format-time-string "plan/after-hours/after-hours-%Y.org")))
