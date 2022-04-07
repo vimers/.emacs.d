@@ -7,11 +7,12 @@
   (declare-function org-display-inline-images "org.el")
 
   :init
+  (setq-default org-todo-keywords
+                '((sequence "TODO" "PENDING" "|" "DONE" "CANCEL")))
   (setq org-todo-keyword-faces '(("TODO" . "green")
-							   ("DOING" . (:background "yellow" :foreground "black" :weight bold))
-							   ("PENDING" . "red")
-							   ("DONE" . "grey")
-							   ("CANCEL" . "grey")))
+                                 ("PENDING" . "red")
+                                 ("DONE" . "grey")
+                                 ("CANCEL" . "grey")))
   (setq org-enforce-todo-dependencies t)
   ;; trust all code as being safe
   (setq org-confirm-babel-evaluate nil)
