@@ -7,7 +7,12 @@ The simplest emacs setting for org usage
    ```shell
    git clone https://github.com/vimers/.emacs.d.git
    ```
-2. Open the emacs and package installing will be done automatically
+2. Set font using following script in `custom.el`
+
+    ```emacs-lisp
+    (set-face-attribute 'default nil :font "Noto Sans 18")
+    ```
+3. Open the emacs and package installing will be done automatically
 
 # Attension
 * Make sure `.emacs` not exists in home direcotry, otherwise all config files in `.emacs.d` will not be loaded.
