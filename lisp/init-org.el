@@ -45,7 +45,7 @@
   (setq org-capture-templates
       `(("t" "Work Todo" entry (file ,(concat (file-name-as-directory org-home-dir) (format-time-string "plan/work/work-%Y.org"))) "* TODO %^{任务标题}\nCreate at %U\n %?")
 	("j" "Journal" entry (file+datetree ,(concat (file-name-as-directory org-home-dir) (format-time-string "journal/journal-%Y.org"))) "* %U - %^{标题}\n %?")
-	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "意向人员") "* 待沟通 %^{姓名}%^{COMPANY}p%^{TEAM}p\n%?")
+	("r" "Recruit" entry (file+headline ,(concat (file-name-as-directory org-home-dir) "plan/work/recruit.org") "人员招聘") "* 待沟通 %^{Name}%^{Company}p%^{TEAM}p%^{Mobile}p\n%?")
 	("b" "Billing")
 	("bg" "Game" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Game | %^{Description} | %^{Amount} |")
 	("be" "Education" table-line (file+olp ,(concat (file-name-as-directory org-home-dir) "plan/after-hours/billing.org") ,(format-time-string "%Y年") ,(format-time-string "%m月")) " | %^t | Education | %^{Description} | %^{Amount} |")
